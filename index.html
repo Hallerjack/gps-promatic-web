@@ -10,6 +10,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/img/logo-promatic-gps/favicon_promatic-media.png">
 </head>
 <body>
 
@@ -17,8 +18,10 @@
     <nav id="navbar" class="navbar">
         <div class="container navbar__container">
             <a href="#inicio" class="navbar__logo-wrapper">
+
                 <!-- Logo Estado Inicial (Transparente) -->
                 <img class="navbar__logo navbar__logo--default" src="./assets/img/logo-promatic-gps/logo-blanco.svg" alt="Promatic Media Logo">
+
                 <!-- Logo Estado con Scroll (Color/Oscuro) -->
                 <img class="navbar__logo navbar__logo--alt" src="./assets/img/logo-promatic-gps/logo-azul.svg" alt="Promatic Media Logo Alternativo">
             </a>
@@ -37,7 +40,7 @@
 
     <!-- 1. SECCIÓN PRINCIPAL: Hero Section -->
     <section id="inicio" class="hero section--dark">
-        <!-- [ASSET: Video de background de flotas/tecnología] -->
+      
         <video autoplay muted loop playsinline class="hero__video">
             <source src="./assets/videos/video-hero-promatic-gps.mp4" type="video/mp4">
         </video>
@@ -63,17 +66,18 @@
             
             <div class="carousel" data-aos="fade-up" data-aos-delay="200">
                 <div class="carousel__track">
-                    <div class="carousel__logo"><img src="logo-telefonica.png" alt="Telefónica Chile"></div>
-                    <div class="carousel__logo"><img src="logo-econorent.png" alt="Econorent"></div>
-                    <div class="carousel__logo"><img src="logo-samu.png" alt="SAMU"></div>
-                    <div class="carousel__logo"><img src="logo-amszo.png" alt="AMSZO"></div>
-                    <div class="carousel__logo"><img src="logo-isg.png" alt="ISG Security"></div>
+                    <div class="carousel__logo"><img src="./assets/img/logos-clientes/movistar-logo.png" alt="Telefónica Chile"></div>
+                    <div class="carousel__logo"><img src="./assets/img/logos-clientes/econorent-logo.webp" alt="Econorent"></div>
+                    <div class="carousel__logo"><img src="./assets/img/logos-clientes/samu-metro-logo.png" alt="SAMU"></div>
+                    <div class="carousel__logo"><img src="./assets/img/logos-clientes/amszo-logo.png" alt="AMSZO"></div>
+                    <div class="carousel__logo"><img src="./assets/img/logos-clientes/isg-security-logo.webp" alt="ISG Security"></div>
+                    
                     <!-- Duplicados para efecto infinito -->
-                    <div class="carousel__logo"><img src="logo-telefonica.png" alt="Telefónica Chile"></div>
-                    <div class="carousel__logo"><img src="logo-econorent.png" alt="Econorent"></div>
-                    <div class="carousel__logo"><img src="logo-samu.png" alt="SAMU"></div>
-                    <div class="carousel__logo"><img src="logo-amszo.png" alt="AMSZO"></div>
-                    <div class="carousel__logo"><img src="logo-isg.png" alt="ISG Security"></div>
+                    <div class="carousel__logo"><img src="./assets/img/logos-clientes/movistar-logo.png" alt="Telefónica Chile"></div>
+                    <div class="carousel__logo"><img src="./assets/img/logos-clientes/econorent-logo.webp" alt="Econorent"></div>
+                    <div class="carousel__logo"><img src="./assets/img/logos-clientes/samu-metro-logo.png" alt="SAMU"></div>
+                    <div class="carousel__logo"><img src="./assets/img/logos-clientes/amszo-logo.png" alt="AMSZO"></div>
+                    <div class="carousel__logo"><img src="./assets/img/logos-clientes/isg-security-logo.webp" alt="ISG Security"></div>
                 </div>
             </div>
         </div>
@@ -84,7 +88,7 @@
         <div class="container mb-5">
             <div class="philosophy-header text-content" data-aos="fade-up">
                 <div class="badge--light"><i class="fa-solid fa-chart-line"></i> EL VALOR DE LA EXPERIENCIA</div>
-                <h2 class="philosophy-header__title">Protegemos tus activos. <span class="text-primary">Maximizamos tus ganancias.</span></h2>
+                <h2 class="philosophy-header__title">Protegemos tus activos.<br> <span class="text-primary">Maximizamos tus ganancias.</span></h2>
                 <p>Nuestra plataforma Pilot Telematics opera en más de 30 países con más de 1 millón de activos conectados globalmente. No solo rastreamos vehículos; creamos inteligencia de negocios.</p>
             </div>
         </div>
@@ -112,22 +116,24 @@
                 </div>
             </div>
             <div class="media-content" data-aos="fade-left">
-                <!-- [ASSET: Video de dashboard de monitoreo o flota de camiones] -->
                 <video autoplay muted loop playsinline class="media-content__video">
-                    <source src="dashboard-gps.mp4" type="video/mp4">
+                    <source src="./assets/videos/highway-video.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
     </section>
 
     <!-- 4. SOLUCIONES Y UNIDADES DE NEGOCIO -->
-    <section id="unidades" class="section--dark">
+    <section id="unidades" class="services section--dark">
+        <video autoplay muted loop playsinline class="services__video">
+            <source src="./assets/videos/chart-video.mp4" type="video/mp4">
+        </video>
+        <div class="services__overlay"></div>
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <div class="badge"><i class="fa-solid fa-microchip"></i> SOLUCIONES INTELIGENTES</div>
                 <h2 class="section-title">Ecosistema Tecnológico de Monitoreo</h2>
             </div>
-            
             <div class="services-grid mb-5">
                 <div class="service-card service-card--dark" data-aos="flip-up" data-aos-delay="100">
                     <div class="service-card__icon text-primary"><i class="fa-solid fa-location-dot"></i></div>
