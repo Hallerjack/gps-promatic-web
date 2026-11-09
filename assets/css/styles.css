@@ -1,4 +1,6 @@
-/* Variables Globales */
+/* =========================================
+   1. VARIABLES GLOBALES & RESET
+========================================= */
 :root {
     --bg-dark: #0f172a;
     --bg-darker: #020617;
@@ -22,15 +24,23 @@
     font-family: var(--font-main);
 }
 
+/* Cortar cualquier desborde horizontal en la raíz */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
 }
 
-/* Utils (Helpers) */
+
+/* =========================================
+   2. UTILS (HELPERS) & TIPOGRAFÍA
+========================================= */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .mb-4 { margin-bottom: 1.5rem; }
 .mb-5 { margin-bottom: 3rem; }
@@ -42,7 +52,6 @@ body {
 .max-w-800 { max-width: 800px; }
 .full-width { width: 100%; text-align: center; justify-content: center; }
 
-/* Tipografía / Colores de texto */
 .text-primary { color: var(--color-primary); }
 .text-red { color: var(--color-red); }
 .text-green { color: var(--color-green); }
@@ -51,7 +60,11 @@ body {
 .subtitle-dark { color: #475569; font-weight: 500; }
 .section-title { font-size: 2.8rem; margin-bottom: 24px; line-height: 1.2; }
 
-/* Botones (BEM) */
+
+/* =========================================
+   3. COMPONENTES GLOBALES (Botones, Badges)
+========================================= */
+/* Botones */
 .btn {
     padding: 14px 28px;
     border-radius: 6px;
@@ -94,12 +107,30 @@ body {
     border-radius: 4px;
     background-color: transparent;
 }
+
 .btn--outline-small:hover {
     background-color: var(--color-primary);
     color: var(--bg-white) !important;
 }
 
-/* Navbar (BEM) */
+/* Badges */
+.badge, .badge--light {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    width: fit-content;
+}
+.badge { background: rgba(89, 184, 217, 0.15); color: var(--color-primary); border: 1px solid rgba(89, 184, 217, 0.3); }
+.badge--light { background: #e2e8f0; color: var(--text-dark); }
+
+
+/* =========================================
+   4. NAVBAR & MENÚ
+========================================= */
 .navbar {
     position: fixed;
     top: 0;
@@ -129,13 +160,13 @@ body {
 
 .navbar__logo-wrapper {
     display: flex;
-    position: relative;
+    position: relative; 
 }
 
 .navbar__logo {
     width: 150px;
     height: auto;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease; 
 }
 
 .navbar__logo--alt {
@@ -145,13 +176,8 @@ body {
     opacity: 0;
 }
 
-.navbar--scrolled .navbar__logo--default {
-    opacity: 0;
-}
-
-.navbar--scrolled .navbar__logo--alt {
-    opacity: 1;
-}
+.navbar--scrolled .navbar__logo--default { opacity: 0; }
+.navbar--scrolled .navbar__logo--alt { opacity: 1; }
 
 .navbar__menu {
     list-style: none;
@@ -200,7 +226,16 @@ body {
     background-color: var(--text-dark);
 }
 
-/* Sections Global (BEM) */
+
+/* =========================================
+   5. ESTRUCTURA DE SECCIONES GLOBALES
+========================================= */
+/* AOS: contener las animaciones laterales dentro de cada sección */
+.section--dark, .section--light, .section--white, .hero {
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
 .section--dark { background-color: var(--bg-dark); color: var(--bg-white); padding: 120px 0; }
 .section--light { background-color: var(--bg-light); color: var(--text-dark); padding: 100px 0; }
 .section--white { background-color: var(--bg-white); color: var(--text-dark); padding: 100px 0; }
@@ -212,21 +247,10 @@ body {
     align-items: center;
 }
 
-/* Badges */
-.badge, .badge--light {
-    display: inline-block;
-    padding: 8px 16px;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    width: fit-content;
-}
-.badge { background: rgba(89, 184, 217, 0.15); color: var(--color-primary); border: 1px solid rgba(89, 184, 217, 0.3); }
-.badge--light { background: #e2e8f0; color: var(--text-dark); }
 
-/* Hero Section */
+/* =========================================
+   6. HERO SECTION
+========================================= */
 .hero { position: relative; overflow: hidden; }
 .hero__video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .hero__overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 100%); z-index: 1; }
@@ -235,7 +259,72 @@ body {
 .hero__text { font-size: 1.1rem; margin-bottom: 40px; max-width: 80%; line-height: 1.8; color: #cbd5e1; }
 .hero__actions { display: flex; gap: 20px; flex-wrap: wrap; }
 
-/* Grid Components */
+
+/* =========================================
+   7. CLIENTES (CARRUSEL)
+========================================= */
+.clients-section {
+    padding: 60px 0 20px 0;
+}
+
+.clients-section__title {
+    font-size: 1.1rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: #64748b; 
+    margin-bottom: 1.5rem;
+}
+
+.carousel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+    padding: 20px 0;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.carousel__track {
+    display: inline-flex;
+    align-items: center;
+    gap: 80px;
+    animation: scroll-carousel 30s linear infinite;
+}
+
+.carousel:hover .carousel__track {
+    animation-play-state: paused;
+}
+
+.carousel__logo { 
+    flex-shrink: 0; 
+}
+
+.carousel__logo img {
+    height: 45px; 
+    width: 120px; 
+    object-fit: contain;
+    filter: grayscale(100%) opacity(50%); 
+    transition: all 0.3s ease;
+}
+
+.carousel__logo:hover img {
+    filter: grayscale(0%) opacity(100%); 
+    transform: scale(1.05);
+}
+
+@keyframes scroll-carousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 40px)); }
+}
+
+
+/* =========================================
+   8. FILOSOFÍA & PROBLEMAS
+========================================= */
+.philosophy-header { display: flex; flex-direction: column; gap: 0px; }
+.philosophy-header__title { font-size: 2.8rem; margin-bottom: 24px; line-height: 1.2; }
+
 .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left; }
 .problem-card { background: var(--bg-white); padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); transition: transform 0.3s; }
 .problem-card:hover { transform: translateY(-5px); }
@@ -243,9 +332,18 @@ body {
 .problem-card__title { font-size: 1.1rem; margin-bottom: 10px; }
 .problem-card__text { font-size: 0.9rem; color: #64748b; margin-bottom: 0; }
 
-.media-content__video { width: 100%; height: 600px; border-radius: 12px; object-fit: cover; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
+.media-content__video { 
+    width: 100%; 
+    height: 600px; 
+    border-radius: 12px; 
+    object-fit: cover; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); 
+}
 
-/* Business Units (Services) */
+
+/* =========================================
+   9. UNIDADES DE NEGOCIO (SERVICIOS)
+========================================= */
 .block-title { font-size: 1.8rem; margin-bottom: 30px; color: var(--bg-white); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .services-grid--two-cols { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
@@ -256,7 +354,36 @@ body {
 .service-card__icon { font-size: 2.8rem; margin-bottom: 25px; }
 .service-card__text { color: #cbd5e1; font-size: 0.95rem; }
 
-/* Contact Form */
+
+/* =========================================
+   10. CASOS DE ÉXITO E IMPACTO
+========================================= */
+.impact-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+}
+.impact-card { 
+    background: var(--bg-white); 
+    padding: 40px 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+}
+.impact-card__value { 
+    font-size: 3rem; 
+    font-weight: 700; 
+    line-height: 1; 
+    margin-bottom: 15px; 
+}
+.impact-card__text { 
+    font-size: 0.9rem; 
+    color: #64748b; 
+}
+
+
+/* =========================================
+   11. CONTACTO Y FORMULARIO
+========================================= */
 .contact-info__title { font-size: 2.8rem; margin-bottom: 24px; line-height: 1.2; }
 .contact-info__text { font-size: 1.1rem; line-height: 1.8; color: #475569; }
 .contact-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
@@ -272,7 +399,6 @@ body {
 textarea.form-group__input { resize: vertical; }
 .form-group__input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(89, 184, 217, 0.2); }
 
-/* Formulario: estado de envío, honeypot y Turnstile */
 .form-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .form-group--captcha { min-height: 65px; }
 .form-status { display: none; margin-bottom: 20px; padding: 12px 14px; border-radius: 6px; font-size: 0.9rem; line-height: 1.5; }
@@ -280,7 +406,10 @@ textarea.form-group__input { resize: vertical; }
 .form-status--error { display: block; background: rgba(211, 52, 52, 0.08); border: 1px solid var(--color-red); color: #8f1f1f; }
 .contact-form button[disabled] { opacity: 0.7; cursor: not-allowed; }
 
-/* Botones Flotantes */
+
+/* =========================================
+   12. BOTONES FLOTANTES
+========================================= */
 .floating-container {
     position: fixed;
     bottom: 30px;
@@ -323,22 +452,32 @@ textarea.form-group__input { resize: vertical; }
 .floating-btn--visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .floating-btn--up:hover { background-color: #48a0bf; box-shadow: 0 6px 20px rgba(89, 184, 217, 0.4); }
 
-/* Footer */
+
+/* =========================================
+   13. FOOTER
+========================================= */
 .footer { background-color: var(--bg-darker); color: #64748b; padding: 60px 0 40px; }
+.footer__logo-container { display: flex; justify-content: center; }
 .footer__logo { width: 180px; height: auto; }
+.footer__text { margin-top: 15px; font-size: 0.9rem; }
 
-/* Cortar cualquier desborde horizontal en la raíz */
-html, body { overflow-x: hidden; max-width: 100%; }
-.section--dark, .section--light, .section--white, .hero { overflow-x: hidden; overflow-x: clip; }
 
-/* Responsive */
+/* =========================================
+   14. RESPONSIVE Y MEDIA QUERIES
+========================================= */
 @media (max-width: 1024px) {
+    /* Tablet / iPad */
     .split-layout, .impact-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
     .services-grid { grid-template-columns: 1fr 1fr; }
+    
+    .carousel__track { gap: 50px; }
+    .carousel__logo img { height: 38px; }
 }
 
 @media (max-width: 768px) {
+    /* Mobile */
     .hamburger { display: flex; }
+    
     .navbar__menu {
         position: absolute;
         top: 100%;
@@ -351,14 +490,26 @@ html, body { overflow-x: hidden; max-width: 100%; }
         display: none;
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
     }
+    
     .navbar__menu--active { display: flex; }
     .navbar__menu--active .navbar__link:not(.btn--outline-small) { color: var(--text-dark); }
     
     .hero__title { font-size: 2.5rem; max-width: 100%; }
     .contact-info__title, .section-title, .philosophy-header__title { font-size: 2.2rem; }
+    
     .problem-grid, .services-grid { grid-template-columns: minmax(0, 1fr); }
+    
     .section--dark, .section--light, .section--white { padding: 60px 0; }
     
+    .carousel__track { gap: 40px; animation: scroll-carousel 20s linear infinite; }
+    .carousel__logo img { height: 30px; filter: grayscale(100%) opacity(70%); }
+    .carousel { 
+        mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); 
+        -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); 
+    }
+    
+    .media-content__video { height: 350px; }
+
     .contact-form { padding: 24px 16px; }
     .form-group--captcha { overflow: hidden; }
 
